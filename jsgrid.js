@@ -150,7 +150,7 @@ function cambio(a){
 function imafo(b)
 {
     $block5.removeAttr('background-color');
-    var dima = "static/inicio/img/ima"+b+".png";
+    var dima = "img/ima"+b+".png";
     $block5.css('background-image', 'url('+dima+')');
 }
 
