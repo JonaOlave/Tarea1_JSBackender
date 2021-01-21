@@ -1,14 +1,29 @@
 {% extends 'base.html' %}
 
 {% block principal1 %}
+
+<div>
+{% if form.errors %}
+    {% for campos in form%}
+        {% if campos.errors %}
+            {% for error in campos.errors%}
+                 {{ error|escape }}
+            {%endfor%}
+        {% endif %}
+    {% endfor %}
+
+    {% if form.non_field_errors %}
+        {% for error in form.non_field_errors %}
+            {{ error|escape }}
+        {% endfor %}
+    {% endif %}
+
+{% endif %}
+</div>
     <form action="" method="POST">
         {% csrf_token %}
-        <div>
-            <input id="id_username" name="username" placeholder="Usuario">
-        </div>
-        <div>
-            <input type="password" id="id_password" name="password" placeholder="Contraseña">
-        </div>
+        <input type="text" id="id_username" name="username" placeholder="Usuario">
+        <input type="password" id="id_password" name="password" placeholder="Password">
         <button type="submit">Acceder</button>
     </form>
 {%endblock principal1%}
