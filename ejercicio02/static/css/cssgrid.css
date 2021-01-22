@@ -11,21 +11,32 @@
 #block11 { grid-area: bloque11;}
 #block12 { grid-area: bloque12;}
 
-.block8-1 { grid-area: bloque8-1;}
-.block8-2 { grid-area: bloque8-2;}
-.block8-3 { grid-area: bloque8-3;}
-
 .grid-container2{
     display: grid;
     grid-template-areas:
     'bloque1 bloque1 bloque2 bloque2 bloque3 bloque3'
     'bloque4 bloque5 bloque5 bloque5 bloque5 bloque6'
-    'bloque7 bloque8 bloque8 bloque8 bloque8 bloque9'
+    'bloque7 bloque5 bloque5 bloque5 bloque5 bloque9'
     'bloque10 bloque10 bloque11 bloque11 bloque12 bloque12';
     grid-gap: 1px;
     /* background-color: #2196F3; */
     padding: 1px;
 }
+
+.block5-1{
+    padding: 20px;
+}
+
+.grid-container5{
+    display: grid;
+    grid-template-areas: 
+    'bot1 bot2 bot3'
+    'cir1 cir2 cir3';
+    grid-gap: 1px;
+    padding: 1px;
+    ;
+}
+
 
 .grid-container2 > div {
     text-align: center;
