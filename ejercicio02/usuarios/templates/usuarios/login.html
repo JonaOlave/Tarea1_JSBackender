@@ -2,32 +2,47 @@
 
 {% block principal1 %}
 
-<div>
+<div id="warning">
+<table>
 {% if form.errors %}
     {% for campos in form%}
         {% if campos.errors %}
             {% for error in campos.errors%}
-                 {{ error|escape }}
+            <tr>
+                 <td>{{ error|escape }}</td>
+            </tr>
             {%endfor%}
         {% endif %}
     {% endfor %}
 
     {% if form.non_field_errors %}
         {% for error in form.non_field_errors %}
-            {{ error|escape }}
+        <tr>
+            <td>{{ error|escape }}</td>
+       </tr>
         {% endfor %}
     {% endif %}
 
 {% endif %}
+</table>
 </div>
     <form action="" method="POST">
         {% csrf_token %}
-        <input type="text" id="id_username" name="username" placeholder="Usuario">
-        <input type="password" id="id_password" name="password" placeholder="Password">
-        <button type="submit">Acceder</button>
+        <table>
+            <tr>
+                <td><input type="text" id="id_username" name="username" placeholder="Usuario"></td>
+            </tr>
+            <tr>
+                <td><input type="password" id="id_password" name="password" placeholder="Password"></td>
+            </tr>
+            <tr>
+                <td><button type="submit">Acceder</button></td>
+            </tr>
+        </table>    
     </form>
 {%endblock principal1%}
 
 {% block principal2 %}
+
 {%endblock principal2%}
 

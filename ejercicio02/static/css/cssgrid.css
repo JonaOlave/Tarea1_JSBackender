@@ -123,3 +123,8 @@
 .c_azul {	background-color: blue; }
 
 .c_blanco {	background-color: white; }
+ 
+#warning {
+    color: red;
+    font-size: small;
+}
