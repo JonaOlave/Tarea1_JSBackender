@@ -1,1 +1,4 @@
 {% extends 'base.html' %}
+{% block logout %}
+<a href="{% url 'usuarios:logout' %}" style="font-size: xx-small; float: right;">Salir</a>
+{% endblock logout %}
