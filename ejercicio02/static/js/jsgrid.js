@@ -1,6 +1,6 @@
-var $c_rojo = $(".c_rojo");
-var $c_verde = $(".c_verde");
-var $c_azul = $(".c_azul");
+var $c_rojo = $('.c_rojo');
+var $c_verde = $('.c_verde');
+var $c_azul = $('.c_azul');
 
 var $cg = $('#cg');
 
@@ -24,57 +24,27 @@ var $circulo_rojo = $("#circulo1");
 var $circulo_verde = $("#circulo2");
 var $circulo_azul = $("#circulo3");
 
-var $contenedor_inferior = $("#contenedor_inferior");
+var $block5b = $("#block5b");
 var nombre = 1;
 var color = 'red';
 var $block5 = $("#block5");
 var itmas = 1;
 
-//Rectangulos
+var maclas = new Array('','c_rojo','c_verde','c_azul','c_rojo','c_blanco','c_rojo','c_verde','c_azul','c_azul','c_verde','c_rojo');
 
-/*$cg.on('click', 'div', function(){
-    var ideid = $(this).attr('id');
-    var idecl = $(this).attr('class');
-    console.log(ideid);
-    console.log(idecl);
-    if(ideid != "block5" || ideid != "block8") {  }
-    else { 
-        for(i=1;i<13;i++)
-        {
-            var ita = $('#block'+i).attr('class');
-            if(idecl == "c_rojo"){
-                if(ita == "c_azul"){
-                    $('#block'+i).removeClass("c_azul").addClass("c_rojo");
-                }
-            }
-            if(idecl == "c_verde"){
-                if(ita == "c_verde"){
-                    $('#block'+i).removeClass("c_verde").addClass("c_azul");
-                }
-            }
-            if(idecl == "c_azul"){
-                if(ita == "c_azul"){
-                    $('#block'+i).removeClass("c_azul").addClass("c_blanco");
-                }
-            }
-        }
-     }
-});*/
-
-$c_rojo.on('click', function(){
-    console.log("Cuadrado rojo presionado");
-    $c_azul.css('background-color', 'red');
+$cg.on('click','div',function(){
+    var elid=$(this).attr('class');
+    if(elid=="c_rojo"){
+        camcol('c_azul','c_rojo',0);
+    }
+    if(elid=="c_verde"){
+        camcol('c_verde','c_azul',0);
+    }
+    if(elid=="c_azul"){
+        camcol('c_azul','c_blanco',0);
+    }
 });
 
-$c_verde.on('click', function(){
-    console.log("Cuadrado verde presionado")
-    $c_verde.css('background-color', 'blue');
-});
-
-$c_azul.on('click', function(){
-    console.log("Cuadrado azul presionado")
-    $c_azul.css('background-color', 'white');
-});
 
 //Botones
 $boton1.on('click', function(){
@@ -98,13 +68,22 @@ $boton3.on('click', function(){
 
 //Circulos
 
-$contenedor_inferior.on('mouseover','div', function(){
+$block5b.on('mouseover','div', function(){
     
-    var ide = $(this).attr('id');    
-    cambio(ide);  
+    var ide = $(this).attr('id');  
+    if(ide=='block5b1'){
+        camcol('a','b',1); 
+    }
+    if(ide=='block5b2'){
+        camcol('a','b',2); 
+    }
+    if(ide=='block5b3'){
+        camcol('a','b',3); 
+    }
+    //cambio(ide);  
 });
-
-$contenedor_inferior.on('mouseout','div', function(){
+/*
+$block5b.on('mouseout','div', function(){
     console.log("aquiestoy");
     var clase = $(this).attr('class');
     $block1.css('background-color', 'red');
@@ -121,18 +100,60 @@ $contenedor_inferior.on('mouseout','div', function(){
     $boton2.css('background-color', 'white');
     $boton3.css('background-color', 'white');
 });
+*/
+//funciones
+
+function camcol(a,b,c){
+    //console.log("aqui");
+    for(i=1;i<13;i++)
+    {
+        if(i!=8)
+        {
+            if(c==0){
+                var cclor = $("#block"+i).attr('class');
+                if(cclor==a)
+                {
+                    $('#block'+i).removeClass(a);
+                    $('#block'+i).addClass(b);
+                    maclas[i]=b;
+                }
+            }            
+            if(c==1){
+                $('#block'+i).removeClass();
+                $('#block'+i).addClass('c_rojo');
+                $('#boton1').css('background-color', 'red');
+                $('#boton2').css('background-color', 'red');
+                $('#boton3').css('background-color', 'red');
+            }
+            if(c==2){
+                $('#block'+i).removeClass();
+                $('#block'+i).addClass('c_verde');
+                $('#boton1').css('background-color', 'green');
+                $('#boton2').css('background-color', 'green');
+                $('#boton3').css('background-color', 'green');
+            }
+            if(c==3){
+                $('#block'+i).removeClass();
+                $('#block'+i).addClass('c_azul');
+                $('#boton1').css('background-color', 'blue');
+                $('#boton2').css('background-color', 'blue');
+                $('#boton3').css('background-color', 'blue');
+            }
+        }
+    }
+}
 
 function cambio(a){
     console.log(a);
-    if(a=="block8-1"){
+    if(a=="block5b1"){
         color="red";
         console.log(color+"if 1");
     }
-    if(a=="block8-2"){
+    if(a=="block5b2"){
         color="green";
         console.log(color+"if 2");
     }
-    if(a=="block8-3"){
+    if(a=="block5b3"){
         color="blue";
         console.log(color+"if 3");
     }
@@ -150,6 +171,6 @@ function cambio(a){
 function imafo(b)
 {
     $block5.removeAttr('background-color');
-    var dima = "img/ima"+b+".png";
+    var dima = "static/img/ima"+b+".png";
     $block5.css('background-image', 'url('+dima+')');
 }

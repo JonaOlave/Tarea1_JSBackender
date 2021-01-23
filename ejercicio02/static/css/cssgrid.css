@@ -5,22 +5,53 @@
 #block5 { grid-area: bloque5;}
 #block6 { grid-area: bloque6;}
 #block7 { grid-area: bloque7;}
-#block8 { grid-area: bloque8;}
 #block9 { grid-area: bloque9;}
 #block10 { grid-area: bloque10;}
 #block11 { grid-area: bloque11;}
 #block12 { grid-area: bloque12;}
+#block5a { grid-area: bloque5a; }
+#block5a1 { grid-area: bloque5a1; }
+#block5a2 { grid-area: bloque5a2; }
+#block5a3 { grid-area: bloque5a3; }
+#block5b { grid-area: bloque5b; }
+#block5b1 { grid-area: bloque5b1; }
+#block5b2 { grid-area: bloque5b2; }
+#block5b3 { grid-area: bloque5b3; }
 
-.block8-1 { grid-area: bloque8-1;}
-.block8-2 { grid-area: bloque8-2;}
-.block8-3 { grid-area: bloque8-3;}
+.grid-container5{
+    display: grid;
+    grid-template-areas:
+    'bloque5a'
+    'bloque5b';
+    grid-gap: 1px;
+    /* background-color: #2196F3; */
+    padding: 1px;
+}
+
+.grid-container5a{
+    display: grid;
+    grid-template-areas:
+    'bloque5a1 bloque5a2 bloque5a3';
+    grid-gap: 1px;
+    /* background-color: #2196F3; */
+    padding: 1px;
+}
+
+.grid-container5b{
+    display: grid;
+    grid-template-areas:
+    'bloque5b1 bloque5b2 bloque5b3';
+    grid-gap: 1px;
+    /* background-color: #2196F3; */
+    padding: 1px;
+}
 
 .grid-container2{
     display: grid;
     grid-template-areas:
     'bloque1 bloque1 bloque2 bloque2 bloque3 bloque3'
     'bloque4 bloque5 bloque5 bloque5 bloque5 bloque6'
-    'bloque7 bloque8 bloque8 bloque8 bloque8 bloque9'
+    'bloque7 bloque5 bloque5 bloque5 bloque5 bloque9'
     'bloque10 bloque10 bloque11 bloque11 bloque12 bloque12';
     grid-gap: 1px;
     /* background-color: #2196F3; */
@@ -51,15 +82,6 @@
     height: 160px;
 }
 
-#block1, #block4, #block6, #block12{
-    background-color: red ;
-}
-#block2, #block7, #block11{
-    background-color:green ;
-}
-#block3, #block9, #block10{
-    background-color: blue ;
-}
 #block5{
     background-color: white ;
     background-size: 100% 100%;
@@ -67,7 +89,6 @@
 
 
 .boton {
-    background-color: white;
     border: 2px solid black;
     color: black;
     padding: 15px 32px;
